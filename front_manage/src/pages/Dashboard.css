@@ -1,0 +1,305 @@
+/* ===== Dashboard – Blue Gradient Theme ===== */
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(8, 117, 201, 0.06);
+  padding: 32px 34px 36px;
+  transition: all 0.2s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 12px 48px rgba(8, 117, 201, 0.08);
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e8edf5;
+}
+
+.dashboard-header h2 {
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  font-size: 1.7rem;
+  letter-spacing: -0.3px;
+}
+
+.dashboard-header h2 i {
+  background: linear-gradient(135deg, #0875c9, #00548f);
+  padding: 10px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-right: 12px;
+}
+
+.item-count {
+  background: linear-gradient(135deg, #0875c9, #0066b3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(8, 117, 201, 0.25);
+}
+
+/* Table */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.custom-table thead th {
+  background: #f0f7ff;
+  color: #0f172a;
+  font-weight: 600;
+  padding: 14px 18px;
+  border-bottom: 2px solid #cbd5e1;
+  border-right: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.custom-table thead th:last-child {
+  border-right: none;
+}
+
+.custom-table tbody td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  vertical-align: middle;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+
+.custom-table tbody td:last-child {
+  border-right: none;
+}
+
+.custom-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.custom-table tbody tr:hover td {
+  background: #f8fcff;
+}
+
+/* Type badges */
+.badge-lost {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  color: #fff;
+  padding: 5px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-found {
+  background: linear-gradient(135deg, #34d399, #10b981);
+  color: #fff;
+  padding: 5px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Status badges – NEW NAMES */
+.status-badge {
+  display: inline-block;
+  padding: 5px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.status-active {
+  background: #fef3c7;
+  color: #d97706;
+  border: 1px solid #fcd34d;
+}
+
+.status-returned {
+  background: #d1fae5;
+  color: #059669;
+  border: 1px solid #6ee7b7;
+}
+
+.status-archived {
+  background: #e5e7eb;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+/* Action buttons */
+.btn-action {
+  border: none;
+  border-radius: 50px;
+  padding: 7px 18px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.btn-returned {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+}
+.btn-returned:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+}
+
+.btn-archived {
+  background: #6b7280;
+  color: #fff;
+}
+.btn-archived:hover {
+  background: #4b5563;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3);
+}
+
+/* Verified icons */
+.custom-table tbody td .fa-check-circle {
+  color: #10b981;
+  font-size: 1.2rem;
+}
+
+.custom-table tbody td .fa-times-circle {
+  color: #ef4444;
+  font-size: 1.2rem;
+}
+
+/* Empty row */
+.custom-table tbody tr.empty-row td {
+  text-align: center;
+  padding: 40px 20px;
+  color: #94a3b8;
+  font-style: italic;
+  border-right: none;
+  background: #fafcff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .dashboard-card {
+    padding: 20px 16px 24px;
+    border-radius: 20px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .dashboard-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .dashboard-header h2 i {
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  .custom-table {
+    border: none;
+    border-radius: 0;
+  }
+
+  .custom-table thead {
+    display: none;
+  }
+
+  .custom-table tbody tr {
+    display: block;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+  }
+
+  .custom-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+    border-right: none;
+    font-size: 0.9rem;
+    background: transparent;
+  }
+
+  .custom-table tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .custom-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .custom-table tbody td:first-child::before {
+    content: "Title";
+  }
+  .custom-table tbody td:nth-child(2)::before {
+    content: "Type";
+  }
+  .custom-table tbody td:nth-child(3)::before {
+    content: "Status";
+  }
+  .custom-table tbody td:nth-child(4)::before {
+    content: "Verified";
+  }
+  .custom-table tbody td:nth-child(5)::before {
+    content: "Reported By";
+  }
+  .custom-table tbody td:nth-child(6)::before {
+    content: "Actions";
+  }
+
+  .custom-table tbody td .btn-action {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .custom-table tbody td .btn-action:last-child {
+    margin-bottom: 0;
+  }
+
+  .custom-table tbody tr.empty-row td {
+    display: block;
+    text-align: center;
+    padding: 30px 16px;
+    border-bottom: none;
+  }
+}

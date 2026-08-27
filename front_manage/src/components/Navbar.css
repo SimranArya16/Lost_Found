@@ -1,0 +1,152 @@
+/* ===== Navbar – White theme with blue accents ===== */
+.custom-navbar {
+  background: #ffffff;
+  border-bottom: 2px solid rgba(8, 117, 201, 0.15);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  padding: 10px 0;
+}
+
+/* Brand */
+.navbar-brand {
+  color: #0f172a !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.navbar-brand i {
+  font-size: 1.3rem;
+  color: #0875c9 !important;
+}
+.navbar-brand .brand-badge {
+  background: linear-gradient(135deg, #0875c9, #0563aa);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(8, 117, 201, 0.2);
+}
+
+/* Nav links */
+.custom-nav-link {
+  color: #1e293b !important;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 40px;
+  transition: all 0.25s ease;
+  position: relative;
+  font-size: 0.95rem;
+}
+.custom-nav-link:hover {
+  color: #0875c9 !important;
+  background: rgba(8, 117, 201, 0.06);
+  transform: translateY(-1px);
+}
+.custom-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2.5px;
+  background: #0875c9;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  transform: translateX(-50%);
+}
+.custom-nav-link:hover::after {
+  width: 50%;
+}
+
+/* User greeting */
+.user-greeting {
+  color: #1e293b !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 4px 0;
+}
+.user-greeting i {
+  color: #0875c9;
+  font-size: 1.1rem;
+}
+
+/* Logout button – blue outline */
+.btn-outline-custom {
+  color: #0875c9;
+  border: 2px solid #0875c9;
+  border-radius: 40px;
+  font-weight: 600;
+  padding: 6px 24px;
+  transition: all 0.25s ease;
+  background: transparent;
+  font-size: 0.9rem;
+}
+.btn-outline-custom:hover {
+  background: linear-gradient(135deg, #0875c9, #0563aa);
+  color: #ffffff;
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(8, 117, 201, 0.3);
+  border-color: #0875c9;
+}
+
+/* Toggler – mobile (dark icon) */
+.navbar-toggler {
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(8, 117, 201, 0.25);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(15, 23, 42, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile responsive */
+@media (max-width: 992px) {
+  .custom-navbar .navbar-nav {
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+  }
+  .custom-nav-link {
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+  .custom-nav-link::after {
+    display: none;
+  }
+  .custom-nav-link:hover {
+    background: rgba(8, 117, 201, 0.06);
+  }
+  .btn-outline-custom {
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .user-greeting {
+    display: block;
+    padding: 8px 0;
+  }
+}
+
+/* Active link */
+.custom-nav-link.active {
+  color: #0875c9 !important;
+  background: rgba(8, 117, 201, 0.08);
+}
+.custom-nav-link.active::after {
+  width: 50%;
+}
+
+/* Left group – ensure left alignment */
+.left-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+}
