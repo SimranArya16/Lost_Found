@@ -16,33 +16,6 @@ A full-stack web application that helps college students report, search, and rec
 - Protected routes and user permissions
 - Responsive user interface
 
-## Folder structure
-Lost_Found/
-│
-├── back_manage/
-│   ├── accounts/
-│   ├── backend/
-│   ├── items/
-│   ├── media/
-│   ├── .env.example
-│   ├── manage.py
-│   └── requirements.txt
-│
-├── front_manage/
-│   ├── src/
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── pages/
-│   │   ├── App.jsx
-│   │   ├── index.css
-│   │   └── main.jsx
-│   ├── index.html
-│   ├── package.json
-│   └── vite.confug.js
-│
-├── .gitignore
-└── README.md
 
 ## Tech Stack
 
