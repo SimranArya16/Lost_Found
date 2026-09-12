@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import './Navbar.css'
 
@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg sticky-top custom-navbar">
-      <div className="container-fluid px-0"> {/* ← container-fluid with no side padding */}
+      <div className="container-fluid px-0">
         <div className="d-flex align-items-center me-auto left-group">
           <Link to="/" className="navbar-brand fw-bold">
             <i className="fas fa-search me-2 text-primary"></i>
@@ -41,24 +41,36 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center gap-1">
             <li className="nav-item">
-              <Link to="/" className="nav-link custom-nav-link">Browse</Link>
+              <NavLink to="/" end className="nav-link custom-nav-link">Browse</NavLink>
             </li>
 
-           
+            {user && (
+              <>
+                <li className="nav-item">
+                  <NavLink to="/post-item" className="nav-link custom-nav-link">Report Item</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/messages" className="nav-link custom-nav-link">Messages</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/my-reports" className="nav-link custom-nav-link">My Reports</NavLink>
+                </li>
+              </>
+            )}
 
             {user?.is_staff && (
               <li className="nav-item">
-                <Link to="/dashboard" className="nav-link custom-nav-link">Admin Dashboard</Link>
+                <NavLink to="/dashboard" className="nav-link custom-nav-link">Admin Dashboard</NavLink>
               </li>
             )}
 
             {!user && (
               <>
                 <li className="nav-item">
-                  <Link to="/login" className="nav-link custom-nav-link">Login</Link>
+                  <NavLink to="/login" className="nav-link custom-nav-link">Login</NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link to="/register" className="nav-link custom-nav-link">Register</Link>
+                  <NavLink to="/register" className="nav-link custom-nav-link">Register</NavLink>
                 </li>
               </>
             )}

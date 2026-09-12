@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getItem, deleteItem } from '../api/items'
+import { startConversation } from '../api/messages'
 import { useAuth } from '../context/AuthContext'
 
 export default function ItemDetail() {
@@ -19,30 +20,63 @@ export default function ItemDetail() {
     navigate('/')
   }
 
-  if (!item) return <div className="text-center py-5"><div className="spinner-border text-primary"></div></div>
+  const handleMessage = async () => {
+    if (!user) {
+      navigate('/login')
+      return
+    }
+    const { data } = await startConversation(item.id)
+    navigate(`/messages/${data.id}`)
+  }
+
+  if (!item) return <div className="loading-state">Loading...</div>
 
   const canManage = user && (user.is_staff || user.id === item.reported_by)
+  const isOwner = user && user.id === item.reported_by
 
   return (
-    <div className="container py-4" style={{ maxWidth: '760px' }}>
-      <div className="card p-4 shadow-sm border-0 rounded-4">
-        {item.image && <img src={item.image} className="img-fluid rounded-4 mb-3" alt={item.title} style={{ maxHeight: '360px', objectFit: 'cover' }} />}
-        <h2 className="fw-bold">{item.title}</h2>
-        <span className={`badge badge-${item.item_type} d-inline-block mb-3`}>{item.item_type.toUpperCase()}</span>
-        <p><strong>Category:</strong> {item.category.replace('_', ' ')}</p>
-        <p><strong>Location:</strong> {item.location}</p>
-        <p><strong>Date:</strong> {item.date_occurred}</p>
-        <p><strong>Status:</strong> {item.status}</p>
-        <p><strong>Reported by:</strong> {item.reported_by_username}</p>
-        <p>{item.description}</p>
+    <div className="item-detail-page">
+      <div className="item-detail-image">
+        {item.image ? <img src={item.image} alt={item.title} /> : <div className="detail-placeholder">📦</div>}
+        <span className={`badge badge-${item.item_type}`}>{item.item_type.toUpperCase()}</span>
+      </div>
 
-        {canManage && (
-          <div className="mt-3">
-            <button onClick={handleDelete} className="btn btn-danger">
-              <i className="fas fa-trash me-2"></i>Delete
-            </button>
+      <div className="item-detail-info">
+        <span className={`status-pill status-${item.status}`}>{item.status}</span>
+        <h2>{item.title}</h2>
+
+        <div className="detail-grid">
+          <div>
+            <span className="detail-label">Category</span>
+            <span className="detail-value">{item.category.replace('_', ' ')}</span>
           </div>
-        )}
+          <div>
+            <span className="detail-label">Location</span>
+            <span className="detail-value"> {item.location}</span>
+          </div>
+          <div>
+            <span className="detail-label">Date</span>
+            <span className="detail-value">{item.date_occurred}</span>
+          </div>
+          <div>
+            <span className="detail-label">Reported by</span>
+            <span className="detail-value">{item.reported_by_username}</span>
+          </div>
+        </div>
+
+        <div className="detail-description">
+          <span className="detail-label">Description</span>
+          <p>{item.description}</p>
+        </div>
+
+        <div className="actions">
+          {!isOwner && (
+            <button className="message-btn" onClick={handleMessage}>💬 Message Reporter</button>
+          )}
+          {canManage && (
+            <button onClick={handleDelete}>🗑 Delete Report</button>
+          )}
+        </div>
       </div>
     </div>
   )
