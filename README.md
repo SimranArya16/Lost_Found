@@ -40,6 +40,10 @@ A full-stack web application that helps college students report, search, and rec
 
 ![Your Reports](Images/your_report.png)
 
+### Contact
+
+![Your Reports](Images/contact.png)
+
 ### Chat
 
 ![Chat](Images/chats.png)
