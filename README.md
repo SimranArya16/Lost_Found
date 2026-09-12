@@ -18,17 +18,19 @@ A full-stack web application that helps college students report, search, and rec
 
 ## Screenshots
 
-### Home Page
 
-![Home Page](Images/home_page.png)
+### Registration Page
+
+![Registration Page](Images/register.png)
 
 ### Login Page
 
 ![Login Page](Images/login.png)
 
-### Registration Page
+### Home Page
 
-![Registration Page](Images/register.png)
+![Home Page](Images/home_page.png)
+
 
 ### Post Lost or Found Item
 
